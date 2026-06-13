@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Acervo de Livros</h3>
+<table>
+    <tr><th>ID</th><th>Título</th><th>Autor</th><th>Status</th><th>Ação</th></tr>
+    {% for livro in livros %}
+    <tr>
+        <td>{{ livro.id }}</td>
+        <td>{{ livro.titulo }}</td>
+        <td>{{ livro.autor }}</td>
+        <td>{{ 'Disponível' if livro.disponivel else 'Emprestado' }}</td>
+        <td>
+            {% if livro.disponivel %}
+                <a class="btn btn-green" href="/emprestar/{{ livro.id }}">Emprestar</a>
+            {% else %}
+                <a class="btn btn-red" href="/devolver/{{ livro.id }}">Devolver</a>
+            {% endif %}
+        </td>
+    </tr>
+    {% else %}
+    <tr><td colspan="5">Nenhum livro cadastrado.</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}
