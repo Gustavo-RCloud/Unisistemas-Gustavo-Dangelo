@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Histórico de Empréstimos</h3>
+<table>
+    <tr><th>ID</th><th>Livro</th><th>Usuário</th><th>Empréstimo</th><th>Devolução</th></tr>
+    {% for r in registros %}
+    <tr>
+        <td>{{ r.id }}</td>
+        <td>{{ r.titulo }}</td>
+        <td>{{ r.usuario }}</td>
+        <td>{{ r.data_emprestimo }}</td>
+        <td>{{ r.data_devolucao or 'Pendente' }}</td>
+    </tr>
+    {% else %}
+    <tr><td colspan="5">Nenhum empréstimo registrado.</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}
