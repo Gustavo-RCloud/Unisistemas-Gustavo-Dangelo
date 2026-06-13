@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Biblioteca</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; }
+        nav a { margin-right: 15px; text-decoration: none; color: #007bff; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background: #f4f4f4; }
+        .btn { padding: 6px 12px; text-decoration: none; border-radius: 4px; font-size: 14px; }
+        .btn-green { background: #28a745; color: white; }
+        .btn-red { background: #dc3545; color: white; }
+        input, button { padding: 8px; margin: 5px 0; width: 100%; box-sizing: border-box; }
+        button { background: #007bff; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Sistema de Biblioteca</h2>
+    <nav>
+        <a href="/">Acervo</a>
+        <a href="/cadastrar">Cadastrar Livro</a>
+        <a href="/historico">Histórico</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>
